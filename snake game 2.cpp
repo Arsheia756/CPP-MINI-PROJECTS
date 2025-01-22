@@ -35,9 +35,9 @@ void HideCursor() {
 void DisplayTitle() {
     system("cls");
     SetColor(10); 
-    cout << "\t\t=========================\n";
+    cout << "\t\t======================\n";
     cout << " \t\t    SNAKE GAME\n";
-    cout << "\t\t=========================\n";
+    cout << "\t\t======================\n";
     SetColor(7); 
     cout << "\t\tGAME CONTROLS: \n";
     cout << "\t\tW : Up\n\t\tA : Left\n \t\tS : Down\n \t\tD : Right\n \t\tX - Exit\n";
