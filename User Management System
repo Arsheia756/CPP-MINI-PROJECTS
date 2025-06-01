@@ -1,15 +1,1 @@
-# User Login System (C++)
 
-This mini project is a simple user registration and login system built in C++, storing user data in memory only (no file handling).
-
-## ✨ Features
-- Register multiple users
-- Login with username and password
-- Uses basic  functions
-- Console-based interface
-
-## 🧠 Concepts Used
-
-- Functions
-- Conditionals
-- Loops
