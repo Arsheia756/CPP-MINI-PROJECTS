@@ -1,0 +1,87 @@
+#include <iostream>
+// for formatting output
+#include <iomanip>   
+#include <string>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int rollNo;
+     // marks in 5 subjects
+    float marks[5];    
+    float total;
+    float average;
+    char grade;
+
+public:
+  
+    void input() {
+        cout << "\nEnter Student Name: ";
+        getline(cin, name);
+        cout << "Enter Roll Number: ";
+        cin >> rollNo;
+        cout << "Enter marks for 5 subjects (out of 100):\n";
+        total = 0;
+        for (int i = 0; i < 5; i++) {
+            cout << "Subject " << i + 1 << ": ";
+            cin >> marks[i];
+            total += marks[i];
+        }
+        cin.ignore(); 
+        calculate();
+    }
+
+    // Calculate total, average and grade
+    void calculate() {
+        average = total / 5.0;
+
+        if (average >= 90)
+            grade = 'A';
+        else if (average >= 80)
+            grade = 'B';
+        else if (average >= 70)
+            grade = 'C';
+        else if (average >= 60)
+            grade = 'D';
+        else
+            grade = 'F';
+    }
+
+    // Display result
+    void display() const {
+        cout << left << setw(15) << name
+             << setw(10) << rollNo
+             << setw(10) << fixed << setprecision(2) << total
+             << setw(10) << average
+             << setw(8) << grade << endl;
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter number of students: ";
+    cin >> n;
+    cin.ignore();
+
+    Student s[n];
+
+    for (int i = 0; i < n; i++) {
+        cout << "\n--- Enter details for Student " << i + 1 << " ---";
+        s[i].input();
+    }
+
+    cout << "\n\n----------- STUDENT REPORT CARD -----------\n";
+    cout << left << setw(15) << "Name"
+         << setw(10) << "Roll No"
+         << setw(10) << "Total"
+         << setw(10) << "Average"
+         << setw(8) << "Grade" << endl;
+    cout << "-------------------------------------------\n";
+
+    for (int i = 0; i < n; i++) {
+        s[i].display();
+    }
+
+    return 0;
+}
